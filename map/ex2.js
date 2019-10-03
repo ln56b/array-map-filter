@@ -14,6 +14,7 @@ OU
 en fonction de la valeur de la propriété `isVegetarian`, en remplaçant FOOD
 par le nom du produit
 
+
 Exemple d'entrée:
   [
     {
@@ -43,7 +44,12 @@ En sortie: [
  */
 
 function getFoodCategories(foods) {
+  const newArray = foods.map(i => {
+    return i.isVegetarian? `${i.food} is suitable for vegetarians` : `${i.food} is not suitable for vegetarians`;
+  });
+  return newArray;
 }
+
 
 
 

@@ -60,7 +60,27 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
-}
+  
+  const fullArray = movies.map(object => {
+
+  if (object.rating < 60) {
+      return Object.assign({label : "rotten"}, object);
+    }
+
+  if (object.rating > 75) {
+      return Object.assign({label : "certified fresh"}, object);
+    }
+
+  else {
+      return Object.assign({label : "fresh"}, object);
+    }
+  })
+  return fullArray;
+
+};
+
+
+
 
 
 
